@@ -13,3 +13,21 @@ def index():
 @app.route('/uploads/<filename>')
 def send_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
+
+@app.route('/<int:book_id>')
+def book(book_id):
+    book = Book.query.get_or_404(book_id)
+    return render_template('book.html', book=book)
+
+
+@app.route('/thrillers/')
+def thrillers():
+    books = Book.query.filter(Book.genre == 'триллер').all()
+    return render_template('thrillers.html', books=books)
+
+
+@app.route('/best/')
+def best():
+    books = Book.query.filter(Book.rating > 4).all()
+    return render_template('best.html', books=books)

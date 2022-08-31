@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
     <div class="container mx-auto mt-4">
-  <div class="row justify-content-center">
+  <div class="d-flex justify-content-center">
 
-{% for book in books %}
+{% for book in books.items %}
 
 <div class="card">
   <div class="card-img">
@@ -38,4 +37,15 @@
 {% endfor %}
   </div>
    </div>
+    {% for page_num in books.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+      {% if page_num %}
+        {% if books.page == page_num %}
+          <a class="btn btn-info mb-4" href="{{ url_for('best', page=page_num) }}">{{ page_num }}</a>
+        {% else %}
+          <a class="btn btn-outline-info mb-4" href="{{ url_for('best', page=page_num) }}">{{ page_num }}</a>
+        {% endif %}
+      {% else %}
+        ...
+      {% endif %}
+    {% endfor %}    
 {% endblock %}
