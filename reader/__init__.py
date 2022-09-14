@@ -8,6 +8,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = \
     'sqlite:///' + os.path.join(basedir, 'database.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'hard to quess'
+app.config['JSON_AS_ASCII'] = False
 db = SQLAlchemy(app)
 
 UPLOAD_FOLDER = 'uploads'

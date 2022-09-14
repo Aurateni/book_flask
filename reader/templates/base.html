@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>AvidReader - список прочитанных книг</title>
+  <title>Клуб "Чтец" - список прочитанных книг</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
@@ -15,11 +15,11 @@
 </head>
 <body>
  <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center fixed-top">
-  <a class="navbar-brand" href="{{ url_for('index') }}"><i class="fa fa-book-open" style="padding-right:5px"></i>AvidReader</a>
+  <a class="navbar-brand" href="{{ url_for('index') }}"><i class="fa fa-book-open" style="padding-right:5px"></i>Клуб "Чтец"</a>
 
   <!-- Ссылки -->
   <a class="btn btn-info  mr-2" href="{{ url_for('index') }}" role="button">Все книги</a>
-  <a class="btn btn-info mr-2" href="#" role="button">Добавить</a>
+  <a class="btn btn-info mr-2" href="{{ url_for('create') }}" role="button">Добавить</a>
   <a class="btn btn-info mr-2" href="{{ url_for('thrillers') }}" role="button">Триллеры</a>
   <a class="btn btn-info mr-2" href="{{ url_for('best') }}" role="button">Лучшие</a>
  </nav>
@@ -66,13 +66,16 @@
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
             <p class="copyright-text">&copy; 2022 Все права защищены
-         <a href="#">Читалка</a>.
+         <a href="#">Клуб "Чтец"</a>.
             </p>
           </div>
 
           <div class="col-md-4 col-sm-6 col-xs-12">
             <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
               <li><a class="dribbble" href="#"><i class="fa fa-telegram"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
             </ul>
           </div>
         </div>

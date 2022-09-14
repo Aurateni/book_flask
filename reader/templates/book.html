@@ -8,7 +8,7 @@
       <div class="circle">
         <span>Фото</span>
       </div>
-    <div class="book">
+      <div class="book">
       <h3 class="mt-4">{{ book.author }}</h5>
       <p>Здесь будет краткая биография писателя и ссылки на его сайт и соцпрофили. Для редактирования информации о книге воспользуйтесь кнопками "Изменить" и "Добавить".</p>
       <h4 class="heading">О книге «{{ book.title }}»</h4>
@@ -52,10 +52,10 @@
       </div>
             <div class="text-center d-flex">
       <button type="button" class="btn btn-info btn-sm mr-4">
-       <a href="#" style="color:white; text-decoration:none"><i class="fas fa-pen"></i> Изменить</a>
+       <a href="{{ url_for('edit', book_id=book.id) }}" style="color:white; text-decoration:none"><i class="fas fa-pen"></i> Изменить</a>
       </button>
 
-      <form action="#" method="POST">
+      <form action="{{ url_for('delete', book_id=book.id) }}" method="POST">
         <button class='btn btn-danger btn-sm' type="submit" value="Удалить" onclick="return confirm('Удалить книгу?')"><i class="fa fa-times"></i> Удалить</button>
       </form>
     </div>

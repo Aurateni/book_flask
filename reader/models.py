@@ -3,6 +3,16 @@ from sqlalchemy.sql import func
 
 
 class Book(db.Model):
+    id: int
+    title: str
+    author: str
+    genre: str
+    cover: str
+    rating: int
+    description: str
+    notes: str
+    created_at: str
+
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), unique=True, nullable=False)
     author = db.Column(db.String(100), nullable=False)
